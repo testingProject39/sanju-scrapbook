@@ -1,0 +1,145 @@
+/* ============================================================
+   animations.css — Keyframes and animation utility classes
+   ============================================================ */
+
+/* --- Fade animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Envelope animation --- */
+@keyframes envelopeOpen {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(-180deg); }
+}
+
+@keyframes letterRise {
+  0% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(-60px); opacity: 1; }
+}
+
+/* --- Wax seal pulse --- */
+@keyframes sealPulse {
+  0%, 100% {
+    box-shadow:
+      0 2px 8px rgba(73,54,61,0.3),
+      0 0 0 0 rgba(155, 98, 107, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 2px 8px rgba(73,54,61,0.3),
+      0 0 0 12px rgba(155, 98, 107, 0);
+  }
+}
+
+.seal-pulse {
+  animation: sealPulse 2.5s ease-out infinite;
+}
+
+/* --- Page transition --- */
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- Floating petals --- */
+@keyframes petalFloat1 {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.18; }
+  25% { transform: translate(8px, -16px) rotate(15deg); opacity: 0.22; }
+  50% { transform: translate(-4px, -8px) rotate(-8deg); opacity: 0.18; }
+  75% { transform: translate(12px, 4px) rotate(20deg); opacity: 0.22; }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 0.18; }
+}
+
+@keyframes petalFloat2 {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.15; }
+  30% { transform: translate(-10px, -20px) rotate(-12deg); opacity: 0.2; }
+  60% { transform: translate(6px, -10px) rotate(8deg); opacity: 0.15; }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 0.15; }
+}
+
+@keyframes petalFloat3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.12; }
+  40% { transform: translate(14px, -18px) rotate(25deg); opacity: 0.18; }
+  70% { transform: translate(-8px, -6px) rotate(-10deg); opacity: 0.12; }
+}
+
+/* --- Sparkle effect --- */
+@keyframes sparkle {
+  0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1) rotate(45deg); opacity: 0.8; }
+}
+
+/* --- Counter number roll --- */
+@keyframes numericRoll {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Utility classes --- */
+.anim-fade-in { animation: fadeIn 0.6s ease both; }
+.anim-fade-in-up { animation: fadeInUp 0.7s ease both; }
+.anim-fade-in-scale { animation: fadeInScale 0.6s ease both; }
+
+.anim-delay-100 { animation-delay: 0.1s; }
+.anim-delay-200 { animation-delay: 0.2s; }
+.anim-delay-300 { animation-delay: 0.3s; }
+.anim-delay-400 { animation-delay: 0.4s; }
+.anim-delay-500 { animation-delay: 0.5s; }
+.anim-delay-600 { animation-delay: 0.6s; }
+.anim-delay-800 { animation-delay: 0.8s; }
+
+/* --- Stagger children --- */
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
